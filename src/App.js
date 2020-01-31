@@ -207,12 +207,51 @@ function App() {
   </div>
   )
   console.log(inventory);
+  var smoker;
   return (
-    <Grid container spacing={1} justify="center" alignItems="center">
+    <div>
+    <Header as='h2' icon textAlign='center'>
+          <Icon name='users' circular />
+          <Header.Content>Suitable Caretakers Near You</Header.Content>
+    </Header>
+    
+    <Grid textAlign="center" container spacing={1} justify="center" alignItems="center">
+          
           {val.map(inventory =>
-            <h1>{inventory.Name}</h1>
+            
+          <Grid.Row >
+            <Grid.Column width={13}>
+            <Card fluid="true">
+            <Card.Content>
+              <Image
+                floated='right'
+                size='mini'
+                src='https://react.semantic-ui.com/images/avatar/large/steve.jpg'
+              />
+              <Card.Header>{inventory.Name}</Card.Header>
+              <Card.Meta>{inventory.YearsExperience} Years of Experience</Card.Meta>
+              <Card.Description>
+                <strong>Non-Smoker</strong>
+                <Button> <strong>Background Check</strong></Button>
+              </Card.Description>
+            </Card.Content>
+            <Card.Content extra>
+              <div className='ui two buttons'>
+                <Button basic color='green'>
+                  See More
+          </Button>
+                <Button basic color='red'>
+                  Decline
+          </Button>
+              </div>
+            </Card.Content>
+          </Card>
+          </Grid.Column>
+          </Grid.Row> 
+          
           )}
-        </Grid>
+  </Grid>
+  </div>
   );
 }
 
