@@ -6,7 +6,7 @@ import { Grid, Image, Header, Button, Segment, List, Card } from 'semantic-ui-re
 function App() {
   return (
     <div className="App">
-         <Card.Group>
+  <Card.Group>
     <Card>
       <Card.Content>
         <Image
