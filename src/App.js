@@ -1,11 +1,18 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Grid, Image, Header, Button, Segment, List, Card } from 'semantic-ui-react';
+import { Grid, Icon, Image, Header, Button, Segment, List, Card } from 'semantic-ui-react';
 
 function App() {
   return (
-    <div className="App">
+  <div className="App">
+    <div>
+  <Header as='h2' icon textAlign='center'>
+    <Icon name='users' circular />
+    <Header.Content>Suitable Caretakers Near You</Header.Content>
+  </Header>
+  
+</div>
   <Card.Group>
     <Card>
       <Card.Content>
