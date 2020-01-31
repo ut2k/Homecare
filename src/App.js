@@ -218,22 +218,31 @@ function App() {
     <Grid textAlign="center" container spacing={1} justify="center" alignItems="center">
           
           {val.map(inventory =>
-            
+         
+          
           <Grid.Row >
+
             <Grid.Column width={13}>
             <Card fluid="true">
             <Card.Content>
-              <Image
-                floated='right'
-                size='mini'
-                src='https://react.semantic-ui.com/images/avatar/large/steve.jpg'
-              />
+              
               <Card.Header>{inventory.Name}</Card.Header>
               <Card.Meta>{inventory.YearsExperience} Years of Experience</Card.Meta>
               
               <Card.Description>
-            <strong>{(inventory.Smoker=="N") ? "No Smoker" : "Smoker"}</strong>
-                <Button> <strong>Background Check</strong></Button>
+              <Grid>
+                  <Grid.Column width={3}>
+                  <strong>{(inventory.Smoker=="N") ? "Non-Smoker" : "Smoker"}</strong>
+                  </Grid.Column>
+                  <Grid.Column width={9} textAlign="left"> 
+                 <Button.Group>
+                   {inventory.Days.map(thing => <Button>{thing}</Button>)}
+                 </Button.Group>
+                </Grid.Column>
+                <Grid.Column width={4}>
+                <Button> <strong>Background Check</strong></Button> 
+                </Grid.Column>
+              </Grid>
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
@@ -248,8 +257,18 @@ function App() {
             </Card.Content>
           </Card>
           </Grid.Column>
-          </Grid.Row> 
+          <Image
+            floated='right'
+            size='mini'
+            src='https://react.semantic-ui.com/images/avatar/large/steve.jpg'
+          />
+
+         
+        </Grid.Row> 
           
+          
+       
+         
           )}
   </Grid>
   </div>
