@@ -230,8 +230,9 @@ function App() {
               />
               <Card.Header>{inventory.Name}</Card.Header>
               <Card.Meta>{inventory.YearsExperience} Years of Experience</Card.Meta>
+              
               <Card.Description>
-                <strong>Non-Smoker</strong>
+            <strong>{(inventory.Smoker=="N") ? "No Smoker" : "Smoker"}</strong>
                 <Button> <strong>Background Check</strong></Button>
               </Card.Description>
             </Card.Content>
